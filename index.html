@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Brownies 5to Baco</title>
+    <title>Interclass - Repostería Artesanal</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&amp;family=Playfair+Display:ital,wght@0,900;1,900&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -45,63 +45,156 @@
             overflow-x: hidden;
         }
     </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark min-h-screen">
-    <div class="flex flex-col min-h-screen w-full relative">
-        <div class="relative w-full h-[45vh] flex items-center justify-center overflow-hidden">
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-sans">
+    <div class="flex flex-col w-full relative">
+        <!-- Hero Section -->
+        <div class="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
             <div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
             <div class="absolute top-20 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
-            <div class="w-full max-w-sm aspect-square relative z-10 px-6">
-                <div class="scalloped-shape w-full h-full bg-secondary flex items-center justify-center p-2">
-                    <img alt="Delicious Chocolate Brownie"
-                        class="w-full h-full object-cover scalloped-shape transform hover:scale-105 transition-transform duration-700"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGYFDtXlhNwds9xVM2oo548C97ZjwafBiA5SQ0A8ifXgYJsaz3g8NKTg7isFR-4KYnBX1yaYe29tm0NHuva4I7WGc-GSGn42fg3SguswyplcUHATMyFhyYUf2vWpBUXP-Pt7A_g1NFQOB0x5j_tW9AWv8Oo7C7QdCgnNJwC-drVOGEcjzzPyTQjd0hw311s8zmTrn3aPaIENsjt0vTvCM9eWOsm9cLhatyMck4PoPgeBeVbzgNVAu1_R7jGQxUc47oBaegWoODoPM" />
+            
+            <div class="w-full max-w-sm aspect-square relative z-10 px-6 flex items-center justify-center">
+                <div class="scalloped-shape w-full h-full bg-primary flex flex-col items-center justify-center p-8 text-center shadow-2xl">
+                    <div class="border-2 border-secondary/30 rounded-full p-4 mb-2">
+                        <span class="material-symbols-outlined text-background-light text-6xl block">bakery_dining</span>
+                    </div>
+                    <span class="font-display italic text-4xl text-background-light">I</span>
+                    <div class="h-[1px] w-12 bg-secondary my-1"></div>
+                    <span class="text-[10px] tracking-[0.4em] uppercase text-secondary font-bold">Interclass</span>
                 </div>
             </div>
+            
             <div class="absolute top-1/4 right-10 bg-white dark:bg-zinc-900 custom-shadow rounded-full p-4 z-20">
-                <span class="material-symbols-outlined text-primary dark:text-secondary text-3xl block">star</span>
+                <span class="material-symbols-outlined text-primary dark:text-secondary text-3xl block">verified</span>
             </div>
         </div>
-        <div
-            class="bg-white dark:bg-zinc-900/40 rounded-t-[3.5rem] p-8 flex flex-col gap-8 flex-1 custom-shadow -mt-10 relative z-30">
+
+        <div class="bg-white dark:bg-zinc-900/40 rounded-t-[3.5rem] p-8 flex flex-col gap-8 custom-shadow -mt-10 relative z-30">
+            
             <div class="space-y-3 text-center pt-4">
-                <h1 style="font-size: 35px;" class="font-display italic text-7xl text-primary dark:text-secondary leading-none">
-                    Brownnies <br /> <span style="font-size: 20px;" class="text-secondary dark:text-accent">En 5to Baco 8.00 quetzales</span>
+                <h1 class="font-display italic text-8xl text-primary dark:text-secondary leading-none">
+                    Interclass
                 </h1>
-                <p class="text-zinc-500 dark:text-zinc-400 font-sans tracking-[0.2em] uppercase text-xs font-bold mt-4">
+                <p class="text-secondary dark:text-accent font-display text-2xl italic mt-2">
+                    En 5to Baco
+                </p>
+                <p class="text-zinc-500 dark:text-zinc-400 font-sans tracking-[0.2em] uppercase text-[10px] font-bold mt-4">
                     Calidad • 100% Destacable
                 </p>
             </div>
-            <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto w-full">
-                <div
-                    class="bg-background-light dark:bg-zinc-800/80 rounded-[2rem] p-6 flex flex-col items-center justify-center text-center">
-                    <span class="text-primary dark:text-secondary font-sans font-extrabold text-2xl">39.69g</span>
-                    <span class="text-zinc-400 text-[10px] uppercase font-bold tracking-widest mt-1">Peso Neto</span>
-                </div>
-                <div
-                    class="bg-background-light dark:bg-zinc-800/80 rounded-[2rem] p-6 flex flex-col items-center justify-center text-center">
-                    <span class="text-primary dark:text-secondary font-sans font-extrabold text-2xl">0</span>
-                    <span class="text-zinc-400 text-[10px] uppercase font-bold tracking-widest mt-1">Ventas (por ahora...)</span>
+
+            <!-- Ventas Totales Unificado -->
+            <div class="max-w-xs mx-auto w-full">
+                <div class="bg-background-light dark:bg-zinc-800/80 rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center border border-primary/5 shadow-inner">
+                    <span class="text-primary dark:text-secondary font-sans font-extrabold text-5xl tracking-tighter">45</span>
+                    <span class="text-zinc-400 text-[10px] uppercase font-bold tracking-[0.3em] mt-2">Ventas Totales</span>
                 </div>
             </div>
-            <div class="mt-auto space-y-8 max-w-sm mx-auto w-full pb-6">
-                <div class="flex flex-col items-center gap-4">
+
+            <section class="max-w-6xl mx-auto w-full py-8">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-[1px] flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+                    <h2 class="font-display text-4xl text-primary dark:text-secondary italic">Nuestros Productos</h2>
+                    <div class="h-[1px] flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Producto 1 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/clasicos.png" alt="Brownie Clásico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Clásico</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Nuestro primer producto, ha sido un éxito de ventas. (8.00 Quetzales)</p>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/Donas.png" alt="Brownie con Nueces" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Donas</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Una opción mas que confiable. (10.00 Quetzales)</p>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/galletas.png" alt="Brownie Red Velvet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Galletas grandes con chispas de chocolate</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Un antojo inevitable. (6.00 Quetzales)</p>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/magdalena.png" alt="Chocolate Blanco" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Magdalena</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Ya sea marmolada o con nueces. (Precio no definido)</p>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/pastel.png" alt="Caramelo Salado" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Pastel 3 leches</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Una experiencia dulce y suave con tres capas de leche. (10.00 Quetzales por trozo)</p>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/pastelitos.png" alt="Toque de Café" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Pastelitos de café o canela</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Pastelitos con sabor a café o canela, con buen tamaño y sabor. (8.00 Quetzales c/u)</p>
+                    </div>
+
+                    <!-- Producto 7 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/twinkies.png" alt="Limón & Coco" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Twinkies</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Perfecto para matar el hambre. (6.00 Quetzales c/u)</p>
+                    </div>
+
+                    <!-- Producto 8 -->
+                    <div class="group cursor-pointer bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-[2.5rem] border border-transparent hover:border-secondary/20 transition-all">
+                        <div class="aspect-square bg-background-light dark:bg-zinc-800 rounded-3xl overflow-hidden mb-4 relative shadow-sm group-hover:shadow-md transition-all">
+                            <img src="intimg/volovanes.png" alt="Explosión Oreo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Disponible</div>
+                        </div>
+                        <h3 class="text-primary dark:text-secondary font-bold text-lg px-2">Volovanes</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-xs mt-1 px-2 leading-relaxed">Una opción salada muy particular. (6.00 Quetzales c/u)</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-8 space-y-8 max-w-sm mx-auto w-full pb-12">
+                <div class="flex flex-col items-center gap-6">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLScPJv1ZRUHlEPW0UjmJlLp-6-a-s6EptUtgHFcyAIKJa8GU4w/viewform"
                         target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-2xl font-semibold font-display shadow-md focus:outline-none focus:ring-4 focus:ring-primary/30 transition"
-                        aria-label="Enviar sugerencias (abre en nueva pestaña)">
+                        class="w-full inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-xl font-semibold font-display shadow-xl transform active:scale-95 transition-all"
+                        aria-label="Enviar sugerencias">
                         <span class="material-symbols-outlined">feedback</span>
-                        Sugerencias
+                        Danos tu Sugerencia
                     </a>
+                    
                     <div class="flex items-center justify-between px-4 w-full">
                         <button
-                            class="w-14 h-14 rounded-full bg-secondary/15 dark:bg-secondary/10 text-primary dark:text-secondary flex items-center justify-center active:scale-90 transition-all">
+                            class="w-14 h-14 rounded-full bg-secondary/15 dark:bg-secondary/10 text-primary dark:text-secondary flex items-center justify-center active:scale-90 transition-all border border-secondary/20">
                             <span class="material-symbols-outlined text-2xl">favorite</span>
                         </button>
                         <div class="flex items-center gap-2">
@@ -114,6 +207,7 @@
             </div>
         </div>
     </div>
+
     <button
         class="fixed top-6 right-6 bg-white/80 dark:bg-black/40 backdrop-blur-md text-primary dark:text-white p-4 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all z-[100]"
         onclick="document.documentElement.classList.toggle('dark')">
@@ -124,5 +218,3 @@
 </body>
 
 </html>
-
-
