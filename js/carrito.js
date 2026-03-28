@@ -1,6 +1,6 @@
 const PRECIOS = {
     brownie: { nombre: 'Brownie Clásico', precio: 8, imagen: 'intimg/clasicos.png' },
-    galletas: { nombre: 'Galletas con chispas', precio: 6, imagen: 'intimg/galletas.png' }
+    galletas: { nombre: 'Galletas con chispas', precio: 5, imagen: 'intimg/galletas.png' }
 };
 
 const WHATSAPP_NUMERO = "50232994232";
@@ -24,11 +24,14 @@ function agregarAlCarrito(producto, cantidad = 1) {
         carrito.push({ id: producto, cantidad: cantidad });
     }
     saveCarrito(carrito);
-    mostrarToast(producto, cantidad);
+    mostrarToast(producto);
 }
 
-function mostrarToast(productoId, cantidad) {
+function mostrarToast(productoId) {
     const producto = PRECIOS[productoId];
+    const carrito = getCarrito();
+    const item = carrito.find(p => p.id === productoId);
+    const cantidadTotal = item ? item.cantidad : 0;
     
     const toastExistente = document.getElementById('toast');
     if (toastExistente) toastExistente.remove();
@@ -41,7 +44,7 @@ function mostrarToast(productoId, cantidad) {
             <span class="material-symbols-outlined text-xl">check_circle</span>
             <div>
                 <p class="font-bold text-sm">¡Agregado!</p>
-                <p class="text-xs opacity-90">${cantidad} ${producto.nombre}</p>
+                <p class="text-xs opacity-90">${cantidadTotal} ${producto.nombre}</p>
             </div>
         </div>
     `;
