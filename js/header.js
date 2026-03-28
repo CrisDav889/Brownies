@@ -38,7 +38,7 @@ function crearHeader(paginaActual) {
                 <div class="hidden md:flex items-center gap-1.5">
                     <button onclick="abrirCarrito()" class="relative w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
                         <span class="material-symbols-outlined text-primary">shopping_cart</span>
-                        <span id="carrito-contador" class="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                        <span id="carrito-contador" class="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
                     </button>
                     <button onclick="toggleTheme()" class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all theme-toggle">
                         <span class="material-symbols-outlined text-primary text-lg block dark:hidden">dark_mode</span>
@@ -63,15 +63,41 @@ function crearHeader(paginaActual) {
             </div>
         </header>
 
-        <!-- Botones Flotantes Móvil -->
-        <div class="fixed bottom-4 right-4 flex flex-col gap-2 md:hidden z-[100]">
-            <button onclick="toggleTheme()" class="w-12 h-12 rounded-full bg-white dark:bg-zinc-800 shadow-lg flex items-center justify-center hover:scale-110 transition-all">
-                <span class="material-symbols-outlined text-primary text-xl block dark:hidden">dark_mode</span>
-                <span class="material-symbols-outlined text-primary text-xl hidden dark:block">light_mode</span>
-            </button>
-            <button onclick="abrirCarrito()" class="relative w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-green-600 shadow-xl flex items-center justify-center hover:scale-110 transition-all">
-                <span class="material-symbols-outlined text-white text-2xl">shopping_cart</span>
-                <span id="carrito-contador" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        <!-- Bottom Navigation Bar Móvil -->
+        <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] md:hidden z-[140]">
+            <div class="flex items-center justify-around py-2 px-1">
+                <a href="index.html" class="flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all ${paginaActual === 'index' ? 'text-primary' : 'text-zinc-400 hover:text-primary'}">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                    <span class="text-[10px] font-medium">Menú</span>
+                </a>
+                <button onclick="abrirCarrito()" class="relative flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all text-zinc-400 hover:text-primary">
+                    <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+                    <span id="carrito-contador" class="absolute top-0 right-1 bg-red-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                    <span class="text-[10px] font-medium">Carrito</span>
+                </button>
+                <button onclick="toggleTheme()" class="flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all text-zinc-400 hover:text-primary">
+                    <span class="material-symbols-outlined text-2xl block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-2xl hidden dark:block">light_mode</span>
+                    <span class="text-[10px] font-medium">Tema</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Espaciador para bottom nav -->
+        <div class="h-16 md:hidden"></div>
+
+        <!-- Instrucciones flotantes (solo la primera vez) -->
+        <div id="instruccion" class="fixed bottom-24 md:bottom-4 left-4 md:left-auto md:right-20 z-[90] hidden">
+            <div class="bg-white dark:bg-zinc-800 rounded-2xl shadow-xl p-3 max-w-[200px] md:max-w-xs">
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-primary text-xl">touch_app</span>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-300">
+                        <span class="font-bold">Toca un producto</span> para agregarlo al carrito
+                    </p>
+                </div>
+            </div>
+            <button onclick="cerrarInstruccion()" class="absolute -top-2 -right-2 w-5 h-5 bg-zinc-400 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-xs">close</span>
             </button>
         </div>
 
@@ -80,6 +106,23 @@ function crearHeader(paginaActual) {
     `;
     
     document.body.insertAdjacentHTML('afterbegin', headerHTML);
+    
+    // Mostrar instrucción si es la primera vez
+    setTimeout(() => {
+        const yaVioInstruccion = localStorage.getItem('yaVioInstruccion');
+        const instruccion = document.getElementById('instruccion');
+        if (!yaVioInstruccion && instruccion) {
+            instruccion.classList.remove('hidden');
+            localStorage.setItem('yaVioInstruccion', 'true');
+        }
+    }, 1000);
+}
+
+function cerrarInstruccion() {
+    const instruccion = document.getElementById('instruccion');
+    if (instruccion) {
+        instruccion.classList.add('hidden');
+    }
 }
 
 function toggleMenu() {

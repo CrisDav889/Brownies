@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="bg-white dark:bg-zinc-900/40 rounded-t-[2rem] md:rounded-t-[3rem] px-4 md:px-8 pt-6 md:pt-8 pb-20 md:pb-8 flex flex-col gap-5 md:gap-8 custom-shadow -mt-4 md:-mt-8 relative z-30">
+    <div class="bg-white dark:bg-zinc-900/40 rounded-t-[2rem] md:rounded-t-[3rem] px-4 md:px-8 pt-6 md:pt-8 pb-24 md:pb-8 flex flex-col gap-5 md:gap-8 custom-shadow -mt-4 md:-mt-8 relative z-30">
         
         <!-- Breadcrumb -->
         <div class="flex items-center gap-1.5 text-xs md:text-sm">
@@ -68,36 +68,35 @@
                 </div>
 
                 <p class="text-zinc-600 dark:text-zinc-300 text-sm md:text-base leading-relaxed">
-                    Galletas artesanales de tamaño grande, preparadas con masa fresca y abundantes 
-                    chispas de chocolate. Crujientes por fuera y suaves por dentro.
+                    Galletas artesanales de tamaño grande, con masa fresca y abundantes chispas de chocolate. Crujientes por fuera y suaves por dentro.
                 </p>
 
                 <div class="flex items-center gap-3 md:gap-4">
                     <span class="text-2xl md:text-3xl font-extrabold text-primary dark:text-secondary">Q6.00</span>
-                    <span class="text-zinc-400 text-xs md:text-sm">por unidad</span>
+                    <span class="text-zinc-400 text-xs md:text-sm">c/u</span>
                 </div>
 
                 <!-- Selector de cantidad -->
                 <div class="bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl p-4 md:p-6 space-y-3 md:space-y-4">
                     <label class="block text-xs md:text-sm font-bold uppercase tracking-wider text-zinc-500">
-                        Cantidad
+                        ¿Cuántas quieres?
                     </label>
-                    <div class="flex items-center gap-4">
-                        <button onclick="cambiarCantidadRapida('galletas', -1)" class="w-10 md:w-12 h-10 md:h-12 rounded-full bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center hover:bg-primary/20 transition-all active:scale-95">
-                            <span class="material-symbols-outlined text-lg md:text-xl">remove</span>
+                    <div class="flex items-center justify-center gap-6">
+                        <button onclick="cambiarCantidadRapida('galletas', -1)" class="w-12 md:w-14 h-12 md:h-14 rounded-full bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center hover:bg-primary/20 transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-xl md:text-2xl">remove</span>
                         </button>
-                        <span id="cantidad-rapida" class="text-xl md:text-2xl font-bold w-10 md:w-12 text-center">0</span>
-                        <button onclick="cambiarCantidadRapida('galletas', 1)" class="w-10 md:w-12 h-10 md:h-12 rounded-full bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center hover:bg-primary/20 transition-all active:scale-95">
-                            <span class="material-symbols-outlined text-lg md:text-xl">add</span>
+                        <span id="cantidad-rapida" class="text-3xl md:text-4xl font-bold w-12 md:w-16 text-center">0</span>
+                        <button onclick="cambiarCantidadRapida('galletas', 1)" class="w-12 md:w-14 h-12 md:h-14 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-xl md:text-2xl text-white">add</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- Botón agregar -->
-                <button onclick="agregarCantidadRapida()" id="btn-agregar-rapido" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-2xl text-base md:text-lg font-bold shadow-lg hover:shadow-xl transform hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                    <span class="flex items-center justify-center gap-2">
+                <button onclick="agregarCantidadRapida()" id="btn-agregar-rapido" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 md:px-8 py-4 md:py-5 rounded-2xl text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transform hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" disabled>
+                    <span class="flex items-center justify-center gap-3">
                         <span class="material-symbols-outlined">add_shopping_cart</span>
-                        Agregar al Carrito
+                        <span id="btn-texto">Agregar al Carrito</span>
                     </span>
                 </button>
             </div>
@@ -111,7 +110,7 @@
                     <img src="intimg/clasicos.png" alt="Brownie" class="w-14 md:w-16 h-14 md:h-16 object-cover rounded-lg md:rounded-xl flex-shrink-0">
                     <div class="flex-1 min-w-0">
                         <h3 class="font-bold text-primary dark:text-secondary text-sm md:text-base">Brownie Clásico</h3>
-                        <span class="text-zinc-500 text-xs md:text-sm">Q8.00</span>
+                        <span class="text-zinc-500 text-xs md:text-sm">Q8.00 c/u</span>
                     </div>
                     <span class="material-symbols-outlined text-zinc-400">chevron_right</span>
                 </a>
@@ -146,6 +145,7 @@
                 <div id="carrito-vacio" class="text-center py-6 md:py-8">
                     <span class="material-symbols-outlined text-zinc-300 text-4xl md:text-5xl">shopping_cart</span>
                     <p class="text-zinc-500 dark:text-zinc-400 mt-2 md:mt-3 text-sm">Tu carrito está vacío</p>
+                    <p class="text-zinc-400 text-xs mt-1">Agrega productos para continuar</p>
                 </div>
                 <div id="carrito-lista" class="hidden space-y-2 md:space-y-3"></div>
             </div>
@@ -157,10 +157,10 @@
                     <span id="carrito-total" class="text-primary dark:text-secondary font-extrabold text-lg md:text-xl">Q0.00</span>
                 </div>
 
-                <input type="text" id="carrito-nombre" placeholder="Tu nombre" 
+                <input type="text" id="carrito-nombre" placeholder="Tu nombre completo" 
                     class="w-full px-3 md:px-4 py-2 md:py-2.5 rounded-xl border-2 border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-sm focus:border-primary outline-none transition-all">
 
-                <textarea id="carrito-notas" rows="1" placeholder="Notas (opcional)" 
+                <textarea id="carrito-notas" rows="1" placeholder="¿Algo que debamos saber?" 
                     class="w-full px-3 md:px-4 py-2 md:py-2.5 rounded-xl border-2 border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-sm focus:border-primary outline-none transition-all resize-none"></textarea>
 
                 <button onclick="enviarPedido()" id="btn-pedir" disabled
@@ -181,6 +181,13 @@
             cantidadRapida = Math.max(0, cantidadRapida + cambio);
             document.getElementById('cantidad-rapida').textContent = cantidadRapida;
             document.getElementById('btn-agregar-rapido').disabled = cantidadRapida === 0;
+            
+            const btnTexto = document.getElementById('btn-texto');
+            if (cantidadRapida > 0) {
+                btnTexto.textContent = `Agregar ${cantidadRapida} al Carrito`;
+            } else {
+                btnTexto.textContent = 'Agregar al Carrito';
+            }
         }
         
         function agregarCantidadRapida() {
@@ -191,6 +198,7 @@
                 cantidadRapida = 0;
                 document.getElementById('cantidad-rapida').textContent = 0;
                 document.getElementById('btn-agregar-rapido').disabled = true;
+                document.getElementById('btn-texto').textContent = 'Agregar al Carrito';
             }
         }
     </script>
