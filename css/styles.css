@@ -13,4 +13,75 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Mejoras para el modal del carrito en móviles */
+@media (max-width: 767px) {
+    #modal-carrito {
+        padding: 0 !important;
+    }
+    
+    #carrito-panel {
+        border-radius: 1.5rem 1.5rem 0 0 !important;
+        max-height: 85vh !important;
+    }
+    
+    #carrito-items {
+        padding: 0.75rem !important;
+    }
+}
+
+/* Scrollbar más pequeño para el carrito */
+#carrito-items::-webkit-scrollbar {
+    width: 4px;
+}
+
+#carrito-items::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#carrito-items::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 4px;
+}
+
+.dark #carrito-items::-webkit-scrollbar-thumb {
+    background: #52525b;
+}
+
+/* Animación suave para los botones */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Optimización de imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Touch-friendly buttons */
+@media (pointer: coarse) {
+    button, 
+    a,
+    .cursor-pointer {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Mejora de texto selectable */
+input, textarea {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Prevenir zoom en inputs en iOS */
+@supports (-webkit-touch-callout: none) {
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 16px;
+    }
 }
