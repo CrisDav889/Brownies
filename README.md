@@ -53,7 +53,7 @@ Brownies/
 ### Número de WhatsApp
 Edita `js/carrito.js` y cambia el número:
 ```javascript
-const WHATSAPP_NUMERO = "50232994232";
+const WHATSAPP_NUMERO = "XXXX-XXXX";
 ```
 
 ### Precios
